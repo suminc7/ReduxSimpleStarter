@@ -20,7 +20,7 @@ class SearchBar extends Component {
     onFormSubmit(event){
         event.preventDefault();
 
-        console.log(this.props.fetchWeather(this.state.term));
+        this.props.fetchWeather(this.state.term);
         this.setState({ term: '' })
     }
 
@@ -41,6 +41,7 @@ class SearchBar extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
+    console.log('mapDispatchToProps', dispatch);
     return bindActionCreators( { fetchWeather }, dispatch);
 }
 
